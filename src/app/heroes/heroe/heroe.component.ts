@@ -13,7 +13,15 @@ export class HeroeComponent {
     return this.nombre.toUpperCase();
   }
 
-  obtenerNombre() {
+  obtenerNombre(): string {
     return `El heroe ${this.nombre}, tiene ${this.edad} años`;
+  }
+
+  cambiarHeroe(): void{
+    this.nombre = 'Spiderman';
+  }
+
+  cambiarEdad(): void{
+    this.edad = 30;
   }
 }
