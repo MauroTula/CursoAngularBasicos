@@ -7,20 +7,6 @@
   </div>
 
   <div class="col">
-    <h3>Agregar <small> {{nuevo.nombre}} </small></h3>
-    <hr>
-
-    <!-- <form (submit)="agregar( event )"> -->
-    <!-- se puede pasar el event.preventDefault en el ts -->
-    <form (ngSubmit)="agregar()">
-
-      <!-- <input placeholder="Nombre" type="text" [value]="nuevo.nombre" (input)="cambiarNombre( $event )"> -->
-      <input placeholder="Nombre" type="text" [(ngModel)]="nuevo.nombre" name="nombre">
-
-      <input placeholder="Poder" type="number" [(ngModel)]="nuevo.poder" name="poder">
-
-
-      <button type="submit">Agregar</button>
-    </form>
+    <app-agregar [nuevo]="nuevo" (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"></app-agregar>
   </div>
 </div>

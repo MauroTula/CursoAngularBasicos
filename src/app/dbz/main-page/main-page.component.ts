@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -8,7 +8,7 @@ import { Personaje } from '../interfaces/dbz.interface';
 export class MainPageComponent {
 
 
-  personajes: Personaje[] = [
+  @Input() personajes: Personaje[] = [
     {
       nombre: 'Goku',
       poder: 15000
@@ -24,30 +24,9 @@ export class MainPageComponent {
     poder: null
   }
 
-  agregar(  ) {
-    /* if(this.nuevo.nombre.trim().length === 0 ){
-      return;
-    } */
-    console.log(this.nuevo);
-
-    // Agrega el personaje a la lista
-    this.personajes.push(this.nuevo);
-    // Limpia el formulario al agregar un personaje
-    this.nuevo = {
-      nombre: '',
-      poder: null
-    }
-    
+  agregarNuevoPersonaje( argumento: Personaje) {
+    this.personajes.push(argumento);
   }
+
   
-  /* cambiarNombre( event: any) {
-    console.log(event.target.value);
-
-  } */
- 
-  /* agregar( event: any ) {
-    event.preventDefault();
-    console.log('Hey!!');
-
-  } */
 }
