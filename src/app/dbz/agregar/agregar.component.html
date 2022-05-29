@@ -5,6 +5,7 @@
 <!-- se puede pasar el event.preventDefault en el ts -->
 <form (ngSubmit)="agregar()">
 
+  <!-- Otra forma que se puede escuchar el evento con [value]="" y (input)="" -->
   <!-- <input placeholder="Nombre" type="text" [value]="nuevo.nombre" (input)="cambiarNombre( $event )"> -->
   <input placeholder="Nombre" type="text" [(ngModel)]="nuevo.nombre" name="nombre">
 
