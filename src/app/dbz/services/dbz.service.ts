@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Personaje } from "../interfaces/dbz.interface";
 
 @Injectable()
-export class DbzService{
+export class DbzService {
 
   private _personajes: Personaje[] = [
     {
@@ -15,13 +15,15 @@ export class DbzService{
     }
   ];
 
-    get personajes(): Personaje[]{
-      return [...this._personajes]
-    }
+  get personajes(): Personaje[] {
+    // se usa un spred operator para romer la referencia y crear un array aparte
+    return [...this._personajes]
+  }
 
-  constructor(){}
+  constructor() { }
 
-  agregarPersonaje( personaje: Personaje ){;
-    this._personajes.push( personaje )
+  agregarPersonaje(personaje: Personaje) {
+    ;
+    this._personajes.push(personaje)
   }
 }
